@@ -58,8 +58,8 @@ public class ToimeksiantoController {
         return toimeksiantoRepo.findAllByToimeksiantoId(id)
                 .map(toimeksianto -> {
                     toimeksianto.setOppiaine(toimeksiantoolio.getOppiaine());
-                    toimeksianto.setToimeksiantoAlkuPvm(toimeksiantoolio.getToimeksiantoAlkuPvm());
-                    toimeksianto.setToimeksiantoLoppuPvm(toimeksiantoolio.getToimeksiantoLoppuPvm());
+                    toimeksianto.setToimeksiantoAlkuaika(toimeksiantoolio.getToimeksiantoAlkuaika());
+                    toimeksianto.setToimeksiantoLoppuaika(toimeksiantoolio.getToimeksiantoLoppuaika());
                     toimeksianto.setKoulu(toimeksiantoolio.getKoulu());
                     toimeksianto.setSijainen(toimeksiantoolio.getSijainen());
                     return toimeksiantoRepo.save(toimeksiantoolio);
