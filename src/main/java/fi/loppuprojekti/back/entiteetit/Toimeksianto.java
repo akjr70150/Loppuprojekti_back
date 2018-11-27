@@ -1,27 +1,28 @@
 package fi.loppuprojekti.back.entiteetit;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 public class Toimeksianto {
 
     // GenerationType.IDENTITY????????????????????????????????????????
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int toimeksiantoId;
 
-    private Date toimeksiantoAlkuPvm;
-    private Date toimeksiantoLoppuPvm;
+    private LocalDateTime ToimeksiantoAlkuaika;
+    private LocalDateTime ToimeksiantoLoppuaika;
     private String oppiaine;
 
     // Koulu yhdistetään toimeksiantoon kouluId:n avulla.
     @ManyToOne
-    @JoinColumn(name="kouluId")
+    @JoinColumn(name = "kouluId")
     private Koulu koulu;
 
     // Sijainen yhdistetään toimeksiantoon sijainenId:n avulla.
     @ManyToOne
-    @JoinColumn(name="sijainenId")
+    @JoinColumn(name = "sijainenId")
     private Sijainen sijainen;
 
     // Konstruktori:
@@ -37,20 +38,20 @@ public class Toimeksianto {
         this.toimeksiantoId = toimeksiantoId;
     }
 
-    public Date getToimeksiantoAlkuPvm() {
-        return toimeksiantoAlkuPvm;
+    public LocalDateTime getToimeksiantoAlkuaika() {
+        return ToimeksiantoAlkuaika;
     }
 
-    public void setToimeksiantoAlkuPvm(Date toimeksiantoAlkuPvm) {
-        this.toimeksiantoAlkuPvm = toimeksiantoAlkuPvm;
+    public void setToimeksiantoAlkuaika(LocalDateTime toimeksiantoAlkuaika) {
+        ToimeksiantoAlkuaika = toimeksiantoAlkuaika;
     }
 
-    public Date getToimeksiantoLoppuPvm() {
-        return toimeksiantoLoppuPvm;
+    public LocalDateTime getToimeksiantoLoppuaika() {
+        return ToimeksiantoLoppuaika;
     }
 
-    public void setToimeksiantoLoppuPvm(Date toimeksiantoLoppuPvm) {
-        this.toimeksiantoLoppuPvm = toimeksiantoLoppuPvm;
+    public void setToimeksiantoLoppuaika(LocalDateTime toimeksiantoLoppuaika) {
+        this.ToimeksiantoLoppuaika = toimeksiantoLoppuaika;
     }
 
     public String getOppiaine() {
