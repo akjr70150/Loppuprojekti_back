@@ -27,6 +27,12 @@ public class LoppuprojektiBackApplication {
             koulu.setKouluNimi("Academy");
             koulu.setKouluOsoite("Keilaniemi");
             koulu.setKouluYhteyshenkilo("Nooa");
+            koulu.setRehtori("Riku Rehtori");
+            koulu.setRehtoriEmail("riku.rehtori@koulu.org");
+            koulu.setRehtoriTel("0800123123");
+            koulu.setSihteeri("Irma Sihti");
+            koulu.setSihteeriEmail("irman@email.com");
+            koulu.setSihteeriTel("0800321321");
             repo.save(koulu);
         };
     }
