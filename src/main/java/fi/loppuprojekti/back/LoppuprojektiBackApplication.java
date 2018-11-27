@@ -25,8 +25,10 @@ public class LoppuprojektiBackApplication {
         return args -> {
             Koulu koulu = new Koulu();
             koulu.setKouluNimi("Academy");
-            koulu.setKouluOsoite("Keilaniemi");
-            koulu.setKouluYhteyshenkilo("Nooa");
+            koulu.setKouluOsoite("Keilaniemi 5");
+            koulu.setKouluYhteyshenkilo("Maisa");
+            koulu.setKouluKoordLat(60.171870);
+            koulu.setKouluKoordLong(24.826980);
             koulu.setRehtori("Riku Rehtori");
             koulu.setRehtoriEmail("riku.rehtori@koulu.org");
             koulu.setRehtoriTel("0800123123");
@@ -34,6 +36,25 @@ public class LoppuprojektiBackApplication {
             koulu.setSihteeriEmail("irman@email.com");
             koulu.setSihteeriTel("0800321321");
             repo.save(koulu);
+        };
+    }
+
+    @Bean
+    public CommandLineRunner luoKoulu2(KouluRepository repo) {
+        return args -> {
+            Koulu koulu2 = new Koulu();
+            koulu2.setKouluNimi("Ressun peruskoulu");
+            koulu2.setKouluOsoite("Lapinlahdentie 10");
+            koulu2.setKouluYhteyshenkilo("Leena Liusvaara");
+            koulu2.setKouluKoordLat(60.166950);
+            koulu2.setKouluKoordLong(24.927250);
+            koulu2.setRehtori("Leena Liusvaara");
+            koulu2.setRehtoriEmail("leena@helsinki.fi");
+            koulu2.setRehtoriTel("0800123123");
+            koulu2.setSihteeri("Timo Terävä");
+            koulu2.setSihteeriEmail("timonposti@email.com");
+            koulu2.setSihteeriTel("0800321321");
+            repo.save(koulu2);
         };
     }
 
@@ -61,6 +82,38 @@ public class LoppuprojektiBackApplication {
             toimeksianto.setToimeksiantoAlkuaika(pvmTanaan);
             toimeksianto.setToimeksiantoLoppuaika(pvmTanaan);
             toimeksiantoRepo.save(toimeksianto);
+        };
+    }
+
+    @Bean
+    public CommandLineRunner luoToimeksianto2(ToimeksiantoRepository toimeksiantoRepo) {
+
+        LocalDateTime nyt = LocalDateTime.now();
+        LocalDateTime pvmAlku = LocalDateTime.of(2019, 12, 11, 10, 9);
+        LocalDateTime pvmLoppu = LocalDateTime.of(2019, 12, 20, 16, 9);
+
+        return args -> {
+            Toimeksianto toimeksianto2 = new Toimeksianto();
+            toimeksianto2.setOppiaine("Matematiikka");
+            toimeksianto2.setToimeksiantoAlkuaika(pvmAlku);
+            toimeksianto2.setToimeksiantoLoppuaika(pvmLoppu);
+            toimeksiantoRepo.save(toimeksianto2);
+        };
+    }
+
+    @Bean
+    public CommandLineRunner luoToimeksianto3(ToimeksiantoRepository toimeksiantoRepo) {
+
+        LocalDateTime nyt = LocalDateTime.now();
+        LocalDateTime pvmAlku = LocalDateTime.of(2018, 12, 1, 9, 0);
+        LocalDateTime pvmLoppu = LocalDateTime.of(2018, 12, 2, 16, 0);
+
+        return args -> {
+            Toimeksianto toimeksianto3 = new Toimeksianto();
+            toimeksianto3.setOppiaine("Biologia");
+            toimeksianto3.setToimeksiantoAlkuaika(pvmAlku);
+            toimeksianto3.setToimeksiantoLoppuaika(pvmLoppu);
+            toimeksiantoRepo.save(toimeksianto3);
         };
     }
 
