@@ -35,6 +35,15 @@ public class SijainenController {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/api/sijainenemail/{email}")
+    public ResponseEntity<?> haeSijainenEmaililla(@PathVariable(name = "email") String email) {
+        Optional<Sijainen> optionalSijainen = sijainenRepo.findAllBySijainenSahkoposti(email);
+        if(optionalSijainen.isPresent()) {
+            return ResponseEntity.ok(optionalSijainen.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @DeleteMapping("/api/sijainen/{id}")
     @Transactional
     public ResponseEntity<?> poistaSijainen(@PathVariable(name = "id") int id) {

@@ -9,5 +9,6 @@ public interface SijainenRepository extends CrudRepository<Sijainen, String> {
 
     Optional<Sijainen> findAllBySijainenId(Integer id);
     Optional<Sijainen> removeSijainenBySijainenId(Integer id);
+    Optional<Sijainen> findAllBySijainenSahkoposti (String email);
 
 }
