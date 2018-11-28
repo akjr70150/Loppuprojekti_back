@@ -14,6 +14,8 @@ public class Toimeksianto {
     private LocalDateTime ToimeksiantoAlkuaika;
     private LocalDateTime ToimeksiantoLoppuaika;
     private String oppiaine;
+    private Boolean vahvistus;
+
 
     // Koulu yhdistetään toimeksiantoon kouluId:n avulla.
     @ManyToOne
@@ -27,6 +29,15 @@ public class Toimeksianto {
 
     // Konstruktori:
     public Toimeksianto() {
+
+    }
+
+    public Boolean getVahvistus() {
+        return vahvistus;
+    }
+
+    public void setVahvistus(Boolean vahvistus) {
+        this.vahvistus = vahvistus;
     }
 
     // Getterit ja setterit:

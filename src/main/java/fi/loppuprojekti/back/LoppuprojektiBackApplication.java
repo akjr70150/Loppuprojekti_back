@@ -81,6 +81,7 @@ public class LoppuprojektiBackApplication {
             toimeksianto.setOppiaine("Liikunta");
             toimeksianto.setToimeksiantoAlkuaika(pvmTanaan);
             toimeksianto.setToimeksiantoLoppuaika(pvmTanaan);
+            toimeksianto.setVahvistus(false);
             toimeksiantoRepo.save(toimeksianto);
         };
     }
@@ -97,6 +98,7 @@ public class LoppuprojektiBackApplication {
             toimeksianto2.setOppiaine("Matematiikka");
             toimeksianto2.setToimeksiantoAlkuaika(pvmAlku);
             toimeksianto2.setToimeksiantoLoppuaika(pvmLoppu);
+            toimeksianto2.setVahvistus(false);
             toimeksiantoRepo.save(toimeksianto2);
         };
     }
@@ -113,6 +115,8 @@ public class LoppuprojektiBackApplication {
             toimeksianto3.setOppiaine("Biologia");
             toimeksianto3.setToimeksiantoAlkuaika(pvmAlku);
             toimeksianto3.setToimeksiantoLoppuaika(pvmLoppu);
+            toimeksianto3.setVahvistus(false);
+
             toimeksiantoRepo.save(toimeksianto3);
         };
     }
