@@ -127,6 +127,19 @@ public class LoppuprojektiBackApplication {
             koulu7.setSihteeriEmail("irman@email.com");
             koulu7.setSihteeriTel("0800321321");
             repo.save(koulu7);
+            Koulu koulu8 = new Koulu();
+            koulu8.setKouluNimi("Neulamäen Koulu");
+            koulu8.setKouluOsoite("Nepali");
+            koulu8.setKouluYhteyshenkilo("Matti Kuronen");
+            koulu8.setKouluKoordLat(62.883092);
+            koulu8.setKouluKoordLong(27.610053);
+            koulu8.setRehtori("Veli-Pekka Tikka");
+            koulu8.setRehtoriEmail("vp@nepali.com");
+            koulu8.setRehtoriTel("0800123123");
+            koulu8.setSihteeri("Leena Katainen");
+            koulu8.setSihteeriEmail("leena@nepali.com");
+            koulu8.setSihteeriTel("0800321321");
+            repo.save(koulu8);
         };
     }
 
